@@ -22,6 +22,7 @@ logger = logging.getLogger(__name__)
 
 
 def seo_processor(requests):
+    print('seo_processor:--', requests.get_host())
     key = 'seo_processor'
     value = cache.get(key)
     if value:

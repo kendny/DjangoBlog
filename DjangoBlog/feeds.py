@@ -47,7 +47,7 @@ class DjangoBlogFeed(Feed):
 
     def feed_copyright(self):
         # print(get_current_site().name)
-        return "Copyright© 2018 且听风吟"
+        return "Copyright© 2017-2019 且听风吟"
 
     def item_link(self, item):
         return item.get_absolute_url()

@@ -27,7 +27,7 @@ DEBUG = True
 TESTING = len(sys.argv) > 1 and sys.argv[1] == 'test'
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['*', '127.0.0.1', 'example.com']
+ALLOWED_HOSTS = ['*', '127.0.0.1', 'www.kendny.cn']
 # Application definition
 
 
@@ -99,9 +99,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'djangoblog',
-        'USER': os.environ.get('DJANGO_MYSQL_USER'),
-        'PASSWORD': os.environ.get('DJANGO_MYSQL_PASSWORD'),
-        'HOST': os.environ.get('DJANGO_MYSQL_HOST'),
+        'USER':  'root', #os.environ.get('DJANGO_MYSQL_USER'),
+        'PASSWORD': 'xxxian527', #os.environ.get('DJANGO_MYSQL_PASSWORD'),
+        'HOST':  '127.0.0.1', #os.environ.get('DJANGO_MYSQL_HOST'),
         'PORT': 3306,
         'OPTIONS': {'charset': 'utf8mb4'},
     }
@@ -188,8 +188,15 @@ CACHES = {
     }
 }
 
+"""
+python manage.py shell
+from django.contrib.sites.models import Site
+new_site = Site.objects.create(domain='kendny.cn', name='kendny.cn')
+print (new_site.id)
+"""
+
 SITE_ID = 1
-BAIDU_NOTIFY_URL = "http://data.zz.baidu.com/urls?site=https://www.lylinux.net&token=1uAOGrMsUm5syDGn"
+BAIDU_NOTIFY_URL = "http://data.zz.baidu.com/urls?site=https://www.kendny.cn&token=1uAOGrMsUm5syDGn"
 
 # Emial:
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -204,7 +211,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('DJANGO_EMAIL_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = os.environ.get('DJANGO_EMAIL_USER')
 # Setting debug=false did NOT handle except email notifications
-ADMINS = [('liangliang', 'liangliangyy@gmail.com')]
+ADMINS = [('kendny', 'wh_kendny@163.com')]
 # WX ADMIN password(Two times md5)
 WXADMIN = '995F03AC401D6CABABAEF756FC4D43C7'
 

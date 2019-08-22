@@ -27,8 +27,8 @@ from owntracks.admin import *
 
 
 class DjangoBlogAdminSite(AdminSite):
-    site_header = 'DjangoBlog administration'
-    site_title = 'DjangoBlog site admin'
+    site_header = '凤凰人的博客后台管理系统'
+    site_title = '学习积累的天地'
 
     def __init__(self, name='admin'):
         super().__init__(name)
